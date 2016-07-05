@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Description of Usuario
  *
@@ -66,11 +67,11 @@ class Usuario {
         $db = dbconnect();
         /* Definición del query que permitira ingresar un nuevo registro */
         $sqlsel = "select nombre from usuario
-		where email=:email";
+		where run=:run";
         /* Preparación SQL */
         $querysel = $db->prepare($sqlsel);
         /* Asignación de parametros utilizando bindparam */
-        $querysel->bindParam(':email', $this->semail);
+        $querysel->bindParam(':run', $this->sRun);
 
         $datos = $querysel->execute();
 
@@ -80,115 +81,106 @@ class Usuario {
             return false;
     }
 
-    function VerificaAcceso() { //READ DEL CRUD!
+    //READ DEL CRUD!
+    function VerificaAcceso() { 
         $db = dbconnect();
         /* Definición del query que permitira ingresar un nuevo registro */
-        $sqlsel = "select email,runusuario,nombre,apellido,sexo,fechanacimiento,telefono,suscripcion,pass from usuario
-		where email=:email and pass=:pwd";
+        $sqlsel = "select run,nombre,apaterno,amaterno,pass from usuario
+		where run=:run and pass=:pwd";
         /* Preparación SQL */
         $querysel = $db->prepare($sqlsel);
         /* Asignación de parametros utilizando bindparam */
-        $querysel->bindParam(':email', $this->semail);
-        $querysel->bindParam(':pwd', $this->spass);
+        $querysel->bindParam(':run', $this->sRun);
+        $querysel->bindParam(':pwd', $this->sPass);
 
 
         $datos = $querysel->execute();
 
         if ($querysel->rowcount() == 1) {
             $registro = $querysel->fetch();
-            $this->snombre = $registro['nombre'];
-            $this->apellidos = $registro['apellido'];
-            $this->ssexo = $registro['sexo'];
-            $this->dfechanacimiento = $registro['fechanacimiento'];
-            $this->nTelefono = $registro['telefono'];
-            $this->semail = $registro['email'];
-            $this->bSuscripcion = $registro['suscripcion'];
-            $this->spass = $registro['pass'];
-            $this->srun = $registro['runusuario'];
+            $this->sRun = $registro['run'];
+            $this->sNombre = $registro['nombre'];
+            $this->sAPaterno = $registro['apaterno'];
+            $this->sAMaterno = $registro['amaterno'];
+            $this->sPass = $registro['pass'];
             return true;
         } else {
             return false;
         }
     }
 
-    function CreaCliente($semail, $srun, $snombre, $apellidos, $ssexo, $dfechanacimiento, $nTelefono, $bSuscripcion, $spass) { //CREATE DEL CRUD!
+    //CREATE DEL CRUD!
+    function CreaCliente($sRun, $sNombre, $sAPaterno, $sAMaterno, $sPass) {
         $db = dbconnect();
         /* Definición del query que permitira ingresar un nuevo registro */
-        $sqlsel = "INSERT INTO usuario (email,runusuario,nombre,apellido,sexo,fechanacimiento,telefono,suscripcion,pass) VALUES (:email,:run,:nombre,:apellido,:sexo,:fecha,:telefono,:suscripcion,:pass)";
+        $sqlsel = "INSERT INTO usuario (run,nombre,apaterno,amaterno,pass) VALUES (:run,:nombre,:apaterno,:amaterno,:pass)";
         /* Preparación SQL */
         $querysel = $db->prepare($sqlsel);
         /* Asignación de parametros utilizando bindparam */
-        //:email,:run,:nombre,:apellido,:sexo,:fecha,:telefono,:suscripcion,:pass
-        $querysel->bindParam(':email', $semail);
-        $querysel->bindParam(':run', $srun);
-        $querysel->bindParam(':nombre', $snombre);
-        $querysel->bindParam(':apellido', $apellidos);
-        $querysel->bindParam(':sexo', $ssexo);
-        $querysel->bindParam(':fecha', $dfechanacimiento);
-        $querysel->bindParam(':telefono', $nTelefono);
-        $querysel->bindParam(':suscripcion', $bSuscripcion);
-        $querysel->bindParam(':pass', $spass);
-
+        //:run,:nombre,:apaterno,:amaterno,:pass
+        $querysel->bindParam(':run', $sRun);
+        $querysel->bindParam(':nombre', $sNombre);
+        $querysel->bindParam(':apaterno', $sAPaterno);
+        $querysel->bindParam(':amaterno', $sAMaterno);
+        $querysel->bindParam(':pass', $sPass);
 
         $datos = $querysel->execute();
 
         return $datos;
     }
 
+    //UPDATE DE CLAVE
     function ActualizaClave($snewpwd) {
         $db = dbconnect();
         /* Definición del query que permitira actualizar la clave */
         $sqlupd = "update usuario
 					set pass=:pwd
-					where email=:id";
+					where run=:id";
 
         /* Preparación SQL */
         $querysel = $db->prepare($sqlupd);
 
         /* Asignación de parametros utilizando bindparam */
         $querysel->bindParam(':pwd', md5($snewpwd));
-        $querysel->bindParam(':id', $this->semail);
+        $querysel->bindParam(':id', $this->sRun);
 
         $valaux = $querysel->execute();
 
         return $valaux;
     }
 
-    function ActualizaCliente($srun, $snombre, $sapel, $ses, $sfec, $ntel, $bool, $snewpwd) { //UPDATE DEL CRUD!
+    //UPDATE DEL CRUD!
+    function ActualizaCliente($srun, $snom, $sapat, $samat, $snewpwd) {
         $db = dbconnect();
         /* Definición del query que permitira ingresar un nuevo registro */
-        $sqlupd = "UPDATE usuario runusuario=:run,nombre=:nombre,apellido=:apellido,sexo=:sexo,fechanacimiento=:fecha,telefono=:telefono,suscripcion=:suscripcion,pass=:pass) where email=:email";
+        $sqlupd = "UPDATE usuario run=:run,nombre=:nombre,apaterno=:apaterno,amaterno=:amaterno,pass=:pass) where run=:run";
         /* Preparación SQL */
         $querysel = $db->prepare($sqlupd);
         /* Asignación de parametros utilizando bindparam */
-        //:email,:run,:nombre,:apellido,:sexo,:fecha,:telefono,:suscripcion,:pass
-        $querysel->bindParam(':email', $this->semail);
-        $querysel->bindParam(':run', $srun);
-        $querysel->bindParam(':nombre', $snombre);
-        $querysel->bindParam(':apellido', $sapel);
-        $querysel->bindParam(':sexo', $ses);
-        $querysel->bindParam(':fecha', $sfec);
-        $querysel->bindParam(':telefono', $ntel);
-        $querysel->bindParam(':suscripcion', $bool);
+        //:run,:nombre,:apaterno,:amaterno,:pass        
+        //$querysel->bindParam(':run', $srun);
+        $querysel->bindParam(':nombre', $snom);
+        $querysel->bindParam(':apaterno', $sapat);
+        $querysel->bindParam(':amaterno', $samat);
         $querysel->bindParam(':pass', md5($snewpwd));
-
 
         $valaux = $querysel->execute();
 
         return $valaux;
     }
 
-    function DeleteCliente($email) { // DELETE DEL CRUD!
+    // DELETE DEL CRUD!
+    function DeleteCliente($run) { 
         $db = dbconnect();
         /* Definición del query que permitira actualizar la clave */
         $sqlupd = "DELETE FROM usuario
-					where email=:email";
+					where run=:run";
 
         /* Preparación SQL */
         $querysel = $db->prepare($sqlupd);
 
         /* Asignación de parametros utilizando bindparam */
-        $querysel->bindParam(':email', $email);
+        $querysel->bindParam(':run', $run);
 
         $valaux = $querysel->execute();
 
