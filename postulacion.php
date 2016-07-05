@@ -1,34 +1,27 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+include ('librerias.php');
+/*
+  if (!isset($_SESSION["oUsuario"])) {
+  ?>
+  <script>
+  document.location.href = "login.php";
+  </script>
+  <?php
+  } */
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link href="css/formoid-solid-green.css" rel="stylesheet" type="text/css">
+        <title>Portal de usuario</title>
     </head>
-    <body>
-        <!--
-        rut
-        nombre
-        ap paterno
-        ap materno
-        fecha nac.
-        sexo
-        telefono
-        email
-        direccion
-        comuna (despliega comunas stgo)
-        educacion (despliega profesional, tecnico, media, basica, no posee)
-        experiencia en programacion (si posee, debe ingresar cant. de años)
-        modalidad (despliega diurna y vespertina)
-        curso (despliega java, .net y php)
-        
-        -->
+    <body class="blurBg-true" style="background-color:#EBEBEB">
+        <link rel="stylesheet" href="css/formoid-solid-green.css" type="text/css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+
         <?php
-        // put your code here
+        require ('./form/formPostulacion.php');
         ?>
     </body>
 </html>

@@ -1,19 +1,16 @@
 <?php
-include ('../librerias.php');
-$usr = new Cliente();
+include ('./librerias.php');
+$usr = new Usuario();
 $srun = $_POST['run'];
 $snombre = $_POST['nombre'];
-$apellidos = $_POST['apellidos'];
-$ssexo = $_POST['genero'];
-$dfechanacimiento = $_POST['fecha'];
-$semail = $_POST['correo'];
-$bSuscripcion = $_POST['suscripcion'];
-$nTelefono = $_POST['telefono'];
+$sapaterno = $_POST['apaterno'];
+$samaterno = $_POST['amaterno'];
 $spass = md5($_POST['contraseña']);
-$usr->CreaCliente($semail, $srun, $snombre, $apellidos, $ssexo, $dfechanacimiento, $nTelefono, $bSuscripcion=="on"?true:false, $spass);
+$usr->CreaCliente($srun, $snombre, $sapaterno, $samaterno, $spass=="on"?true:false);
 
-include '../registromail.php';
+//include '../registromail.php';
 ?>
 <script>
+    alert('Se ha registrado con éxito!');
     document.location.href = "<?= PATHURL ?>index.php";
 </script>
