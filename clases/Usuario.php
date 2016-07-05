@@ -1,9 +1,8 @@
 <?php
-
 /**
  * Description of Usuario
  *
- * @author X1005273
+ * @author Jonathan Espinoza Brain
  */
 class Usuario {
 
@@ -13,7 +12,7 @@ class Usuario {
     private $sAMaterno;
     private $sPass;
 
-    function __construct($sRun, $sNombre, $sAPaterno, $sAMaterno, $sPass) {
+    function __construct($sRun=NULL, $sNombre=NULL, $sAPaterno=NULL, $sAMaterno=NULL, $sPass=NULL) {
         $this->sRun = $sRun;
         $this->sNombre = $sNombre;
         $this->sAPaterno = $sAPaterno;
@@ -75,14 +74,15 @@ class Usuario {
 
         $datos = $querysel->execute();
 
-        if ($querysel->rowcount() == 1)
+        if ($querysel->rowcount() == 1) {
             return true;
-        else
+        } else {
             return false;
+        }
     }
 
     //READ DEL CRUD!
-    function VerificaAcceso() { 
+    function VerificaAcceso() {
         $db = dbconnect();
         /* Definición del query que permitira ingresar un nuevo registro */
         $sqlsel = "select run,nombre,apaterno,amaterno,pass from usuario
@@ -159,6 +159,7 @@ class Usuario {
         /* Asignación de parametros utilizando bindparam */
         //:run,:nombre,:apaterno,:amaterno,:pass        
         //$querysel->bindParam(':run', $srun);
+        $querysel->bindParam(':run', $srun);
         $querysel->bindParam(':nombre', $snom);
         $querysel->bindParam(':apaterno', $sapat);
         $querysel->bindParam(':amaterno', $samat);
@@ -170,7 +171,7 @@ class Usuario {
     }
 
     // DELETE DEL CRUD!
-    function DeleteCliente($run) { 
+    function DeleteCliente($run) {
         $db = dbconnect();
         /* Definición del query que permitira actualizar la clave */
         $sqlupd = "DELETE FROM usuario

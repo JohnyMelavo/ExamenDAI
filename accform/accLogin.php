@@ -1,6 +1,6 @@
 <?php
-include ('../librerias.php');
-$usr = new Cliente("", "", "", "", "", $_POST['usuario'], "", "", $_POST["clave"]);
+include ('./librerias.php');
+$usr = new Usuario($_POST['run']+$_POST['run2'],"","","",$_POST["clave"]);
 
 session_start();
 

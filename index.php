@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+include ('librerias.php');
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <link href="css/formoid-solid-green.css" rel="stylesheet" type="text/css">
+        <title>Portal de usuario</title>
     </head>
     <body>
         <?php
-        // put your code here
         ?>
-    </body>
+    <center>
+        <h1>Bienvenido al portal de usuario</h1>
+    </center>
+</body>
 </html>
