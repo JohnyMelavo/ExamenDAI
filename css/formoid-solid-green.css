@@ -193,6 +193,7 @@ Solid style
     width: auto;
 }
 .formoid-solid-green input[type=button]{
+    background-color: #1abc9c;
     outline: none;
     font-size: 1.2em;
 }
@@ -289,7 +290,7 @@ Not advised to edit stuff below this line
     text-align: left;
     vertical-align: middle;
     cursor: pointer;
-    background: #fff;
+    background: #1abc9c;
 
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -346,6 +347,13 @@ Not advised to edit stuff below this line
     text-decoration: none;
 }
 .formoid-solid-green input[type=submit]:active{
+    box-shadow: inset 0 -0.15em 0 rgba(0, 0, 0, 0.2);
+}
+
+.formoid-solid-green input[type=button]:hover{
+    text-decoration: none;
+}
+.formoid-solid-green input[type=button]:active{
     box-shadow: inset 0 -0.15em 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -859,8 +867,12 @@ Not advised to edit stuff below this line
 */
 
 .formoid-solid-green input[type=button]:focus,
-.formoid-solid-green input[type=button]:active,
-.formoid-solid-green input[type=button]:hover,
+.formoid-solid-green input[type=button]:active{
+    background-color: #1abc9c;
+}
+.formoid-solid-green input[type=button]:hover{
+    background-color: #1abc9c;
+}
 .formoid-solid-green input[type=button]{
     border-color: #1abc9c;
 }
@@ -910,6 +922,17 @@ Not advised to edit stuff below this line
     background-color: #edeff1;
     border-top: 2px solid #d6dbdf;
 }
+
+/* element-button + element-text */
+.formoid-solid-green > .button,
+.formoid-solid-green > .title{
+    background-color: #bcc3ca;
+}
+.formoid-solid-green > .button{
+    background-color: #edeff1;
+    border-top: 2px solid #d6dbdf;
+}
+
 
 /* checkbox & radio*/
 .formoid-solid-green input[type=checkbox]+span:before{

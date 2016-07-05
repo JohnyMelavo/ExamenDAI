@@ -5,16 +5,18 @@
     <div class="title">
         <h2>Ingrese sus datos:</h2>
     </div>
-    Clave Actual:<br>
-    <input type="password" name="claveactual" id="claveactual"><br>
-    Nueva Clave:<br>
-    <input type="password" name="clavenueva" id="clavenueva"><br>
-    <br>
-    Repetir Clave:<br>
-    <input type="password" name="repetirclave" id="repetirclave"><br>
-    <br>
-    <div id="mensaje"></div>
-    <input class="button" type="button" name="enviar" value ="Enviar" onclick="Cambiar()">
+    <center>
+        Clave Actual:<br>
+        <input class="required" type="password" name="claveactual" id="claveactual" required="true"><br>
+        Nueva Clave:<br>
+        <input type="password" name="clavenueva" id="clavenueva" required="true"><br>
+        Repetir Clave:<br>
+        <input type="password" name="repetirclave" id="repetirclave" required="true"><br>
+        <br>
+    </center>
+    <div class="button" id="mensaje">
+        <input type="button" name="enviar" value ="Enviar" onclick="Cambiar()">
+    </div>
 </form>
 <script>
     function Cambiar() {
