@@ -1,20 +1,20 @@
 <?php
 $usr = new Usuario();
 ?>
-
 <center>
     <div class="frmd"><legend>Registro de usuario.</legend>            
         <table>
-            <form action="../accform/accRegistro.php" method="POST">
-                <!-- private $srun;
-                private $snombre;
-                private $apellidos;
-                private $csexo;
-                private $dfechanacimiento;
-                private $semail;
-                private $bSuscripcion;
-                private $nTelefono;
-                private $spass;
+            <form class="formoid-solid-green" style="background-color:#aaaaaa;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:560px;min-width:150px" 
+                  method="POST" action="./accform/accRegistro.php" novalidate="novalidate">
+                <div class="title">
+                    <h2>Registro de usuario:</h2>
+                </div>
+                <!-- 
+                private $sRun;
+                private $sNombre;
+                private $sAPaterno;
+                private $sAMaterno;
+                private $sPass;
                 -->
                 <tr>
                     <td>RUN:</td>

@@ -1,4 +1,6 @@
-<?php echo "Cambiar clave a:" . $usr->getSNombre(); ?>
+<div class="divider" style="text-align: right">
+    <?php echo "Cambiar clave a:" . $usr->getSNombre(); ?>
+</div>
 
 <form class="formoid-solid-green" style="background-color:#aaaaaa;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:560px;min-width:150px" 
       method="POST" novalidate="novalidate">
@@ -21,14 +23,14 @@
 <script>
     function Cambiar() {
         var clave;
-        var claveactual = "<?= $oUsr->getSclave(); ?>";
+        var claveactual = "<?= $usr->getSPass(); ?>";
         var dato = $("#claveactual").val();
         clave = CryptoJS.MD5(dato).toString();
-        if (claveactual != clave) {
+        if (claveactual !== clave) {
             alert("Clave actual no corresponde");
             return;
         }
-        if ($("#clavenueva").val() != $("#repetirclave").val()) {
+        if ($("#clavenueva").val() !== $("#repetirclave").val()) {
             alert("Su nueva clave no coincide");
             return;
         }

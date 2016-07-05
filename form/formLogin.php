@@ -15,6 +15,6 @@
         </tr>
     </table>
     <center>
-        <input class="submit" type="submit" value="Ingresar">
+        <input class="submit" type="submit" value="Ingresar"><input type="button" value="Registrar" onclick="location.href = './registroUsuario.php'">
     </center>
 </form>

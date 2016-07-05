@@ -1,7 +1,17 @@
 <?php
 session_start();
 include 'librerias.php';
+
+if (isset($_SESSION["oUsuario"])) {
+    ?>
+    <script>
+        document.location.href = "index.php";
+    </script>
+    <?php
+}
 ?>
+
+
 <html>
     <head>
         <meta charset="utf-8">

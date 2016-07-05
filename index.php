@@ -1,5 +1,13 @@
 <?php
 include ('librerias.php');
+
+if (!isset($_SESSION["oUsuario"])) {
+    ?>
+    <script>
+        document.location.href = "login.php";
+    </script>
+    <?php
+}
 ?>
 
 <html>
