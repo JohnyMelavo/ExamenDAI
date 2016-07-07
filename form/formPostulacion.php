@@ -2,7 +2,7 @@
 $usr = new Usuario();
 ?>
 <form class="formoid-solid-green" style="background-color:#aaaaaa;font-size:10px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:840px;min-width:150px" 
-      method="POST" action="./accform/accPostulacion.php">
+      method="POST" action="../accform/accPostulacion.php">
     <div class="title">
         <h2>Ingreso de Postulación:</h2>
     </div>

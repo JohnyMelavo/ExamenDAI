@@ -13,12 +13,12 @@ include ('librerias.php');
 <html>
     <head>
         <meta charset="UTF-8">
-        <link href="css/formoid-solid-green.css" rel="stylesheet" type="text/css">
+        <link href="./css/formoid-solid-green.css" rel="stylesheet" type="text/css">
         <title>Portal de usuario</title>
     </head>
     <body class="blurBg-true" style="background-color:#EBEBEB">
-        <link rel="stylesheet" href="css/formoid-solid-green.css" type="text/css">
-        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <link rel="stylesheet" href="./css/formoid-solid-green.css" type="text/css">
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
 
         <?php
         require ('./form/formPostulacion.php');

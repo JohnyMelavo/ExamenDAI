@@ -1,10 +1,10 @@
 <?php
-include ('librerias.php');
+include ('presentacion/librerias.php');
 
 if (!isset($_SESSION["oUsuario"])) {
     ?>
     <script>
-        document.location.href = "login.php";
+        document.location.href = "presentacion/login.php";
     </script>
     <?php
 }
@@ -27,7 +27,7 @@ if (!isset($_SESSION["oUsuario"])) {
             <br>
             <br>            
             <center>
-                <input type="button" value="Portal de Postulacion" onclick="location.href = './postulacion.php'"><input type="button" value="Cambiar Contraseña" onclick="location.href = './changepwd.php'">
+                <input type="button" value="Portal de Postulacion" onclick="location.href = 'presentacion/postulacion.php'"><input type="button" value="Cambiar Contraseña" onclick="location.href = 'presentacion/changepwd.php'">
             </center>
             <br>
         </form>

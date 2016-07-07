@@ -1,5 +1,5 @@
 <form class="formoid-solid-green" style="background-color:#aaaaaa;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:560px;min-width:150px" 
-      method="POST" action="./accform/accLogin.php" >
+      method="POST" action="../accform/accLogin.php" >
     <div class="title">
         <h2>Portal de acceso</h2>
     </div>
@@ -14,6 +14,6 @@
         </tr>
     </table>
     <center>
-        <input class="submit" type="submit" value="Ingresar"><input type="button" value="Registrar" onclick="location.href = './registroUsuario.php'">
+        <input class="submit" type="submit" value="Ingresar"><input type="button" value="Registrar" onclick="location.href = '../presentacion/registroUsuario.php'">
     </center>
 </form>

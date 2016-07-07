@@ -1,6 +1,6 @@
 <?php
 
-include("./librerias.php");
+include ('../presentacion/librerias.php');
 $newpewd = $_GET['newpwd'];
 session_start();
 

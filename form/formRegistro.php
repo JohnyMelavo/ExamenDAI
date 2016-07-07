@@ -3,7 +3,7 @@ $usr = new Usuario();
 ?>           
 
 <form class="formoid-solid-green" style="background-color:#aaaaaa;font-size:12px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:560px;min-width:150px" 
-      method="POST" action="./accform/accRegistro.php">
+      method="POST" action="../accform/accRegistro.php">
     <div class="title">
         <h2>Registro de usuario:</h2>
     </div>
@@ -44,8 +44,8 @@ $usr = new Usuario();
         </tr>  
         <tr><br>
         <td>Desea suscribirse?:</td>
-        <td>Si<input type="radio" id="suscripcion" name="suscripcion" checked="true" ></td>
-        <td>No<input type="radio" id="suscripcion" name="suscripcion"></td>
+        <td><input type="radio" id="suscripcion" value="yes" name="suscripcion" checked="true" >Si</td>
+        <td><input type="radio" id="suscripcion" name="suscripcion">No</td>
         </tr>
     </table>
     <div class="submit">

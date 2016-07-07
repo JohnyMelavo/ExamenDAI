@@ -1,5 +1,5 @@
 <?php
-include ('./librerias.php');
+include ('../presentacion/librerias.php');
 $usr = new Usuario();
 $srun = $_POST['run'];
 $snombre = $_POST['nombre'];
