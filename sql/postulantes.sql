@@ -186,10 +186,10 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `curso` int(11) NOT NULL,
   `user_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`)
-  FOREIGN KEY (id_comuna) REFERENCES comunas(id)
-  FOREIGN KEY (educacion) REFERENCES educacion(id)
-  FOREIGN KEY (modalidad) REFERENCES modalidad(id)
-  FOREIGN KEY (curso) REFERENCES curso(id)
+  FOREIGN KEY (`id_comuna`) REFERENCES comunas(`id`)
+  FOREIGN KEY (`educacion`) REFERENCES educacion(`id`)
+  FOREIGN KEY (`modalidad`) REFERENCES modalidad(`id`)
+  FOREIGN KEY (`curso`) REFERENCES curso(`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
