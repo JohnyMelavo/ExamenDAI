@@ -1,6 +1,6 @@
 <?php
 $usr = new Usuario();
-?>           
+?>
 
 <form class="formoid-solid-green" style="background-color:#aaaaaa;font-size:12px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:560px;min-width:150px" 
       method="POST" action="../accform/accRegistro.php">
@@ -21,7 +21,7 @@ $usr = new Usuario();
         </tr>
         <tr>
             <td>Nombre:</td>
-            <td><input name="nombre" id="nombre" type=text required="true"></td>
+            <td><input name="nombre" id="nombre" type=text required="true" onclick="Rut(run)"></td>
             <td> </td>
         </tr>
         <tr>                     
