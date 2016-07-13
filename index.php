@@ -1,6 +1,5 @@
 <?php
 include ('presentacion/librerias.php');
-
 if (!isset($_SESSION["oUsuario"])) {
     ?>
     <script>
@@ -19,8 +18,10 @@ if (!isset($_SESSION["oUsuario"])) {
     <body class="blurBg-true" style="background-color:#EBEBEB">
         <link rel="stylesheet" href="css/formoid-solid-green.css" type="text/css">
         <script type="text/javascript" src="js/jquery.min.js"></script>
+
         <?php
         require ('./form/formIndex.php');
         ?>
+
     </body>
 </html>
