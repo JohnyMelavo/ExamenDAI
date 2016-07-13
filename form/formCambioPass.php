@@ -3,7 +3,7 @@
 </div>
 
 <form class="formoid-solid-green" style="background-color:#aaaaaa;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:560px;min-width:150px" 
-      method="POST" novalidate="novalidate">
+      method="POST">
     <div class="title">
         <h2>Ingrese sus datos:</h2>
     </div>
@@ -17,6 +17,9 @@
         <br>
     </center>
     <div class="button" id="mensaje">
+        <left>
+            <input id="Volver" type="button" value="Volver" onclick="location.href = '../index.php'">
+        </left>
         <input type="button" name="enviar" value ="Enviar" onclick="Cambiar()">
     </div>
 </form>

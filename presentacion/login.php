@@ -5,7 +5,7 @@ include 'librerias.php';
 if (isset($_SESSION["oUsuario"])) {
     ?>
     <script>
-        document.location.href = "../index.php";
+        document.location.href = "./index.php";
     </script>
     <?php
 }

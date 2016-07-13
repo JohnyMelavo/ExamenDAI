@@ -1,6 +1,14 @@
 <?php
 include 'librerias.php';
 $usr = new Usuario();
+
+if (!isset($_SESSION["oUsuario"])) {
+    ?>
+    <script>
+        document.location.href = "login.php";
+    </script>
+    <?php
+}
 ?>
 <html lang=''>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -10,7 +18,7 @@ $usr = new Usuario();
         <script type="text/javascript" src="./js/jquery.min.js"></script>
 
         <?php
-        require ('./form/formCambioPass.php');
+        require ('../form/formCambioPass.php');
         ?>
 
     </body>

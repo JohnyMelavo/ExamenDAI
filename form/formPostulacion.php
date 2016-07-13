@@ -51,6 +51,9 @@ $usr = new Usuario();
         </tr>
     </table>
     <div class="submit">
+        <left>
+            <input id="Volver" type="button" value="Volver" onclick="location.href = '../index.php'">
+        </left>
         <input id="registrar" type="submit" value="Registrar">
     </div>
 </form>

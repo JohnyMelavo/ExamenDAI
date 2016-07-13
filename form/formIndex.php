@@ -7,8 +7,10 @@
     <div class="submit">
         <center>
             <input type="button" value="Portal de Postulacion" onclick="location.href = 'presentacion/postulacion.php'">
-            <input type="button" value="Cambiar Contraseña" onclick="location.href = 'presentacion/changepwd.php'">
+            <input type="button" value="Cambiar Contraseña" onclick="location.href = 'presentacion/changepwd.php'"><br>
+            <input type="button" value="Cerrar Sesión" onclick="location.href = 'presentacion/logout.php'">
         </center>
+        
     </div>
     <br>
 </form>

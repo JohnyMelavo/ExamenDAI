@@ -1,5 +1,7 @@
 <?php
+session_start();
 include ('presentacion/librerias.php');
+
 if (!isset($_SESSION["oUsuario"])) {
     ?>
     <script>
