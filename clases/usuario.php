@@ -249,24 +249,34 @@ class Usuario {
 
     // READ DEL CRUD!
     function LeerDatos($rot) {
-        if (!$this->querysel) {
-            $db = dbconnect();
+        $db = dbconnect();
             /* Definicion del query que permitira seleccionar los registros */
 
 
-            $sqlsel = "select nombre,apellido_pat,apellido_mat,fecha_nacimiento,sexo,telefono,email,direccion from usuarios
+            $sqlsel = "select rut,nombre,password,apellido_pat,apellido_mat,fecha_nacimiento,sexo,telefono,email,direccion,id_comuna,educacion,experiencia_anios,modalidad,curso from usuarios
 		where rut=:run";
             /* Preparacion SQL */
-            $this->querysel = $db->prepare($sqlsel);
+            $querysel = $db->prepare($sqlsel);
             /* Asignación de parametros utilizando bindparam */
             $querysel->bindParam(':run', $rot);
 
-            $this->querysel->execute();
-        }
-
-        $registro = $this->querysel->fetch();
-        if ($registro) {
-            return new self($registro['rut'], $registro['nombre'], $registro['descripcion']);
+            $querysel->execute();
+        
+        if ($querysel->rowcount() == 1) {
+            $registro = $querysel->fetch();
+            $this->sRut = $registro['rut'];
+            $this->sNombre = $registro['nombre'];
+            $this->sPass = $registro['password'];
+            $this->sAPaterno = $registro['apellido_pat'];
+            $this->sAMaterno = $registro['apellido_mat'];
+            $this->dFechaNac = $registro['fecha_nacimiento'];
+            $this->sSexo = $registro['sexo'];
+            $this->sTelefono = $registro['telefono'];
+            $this->sEmail = $registro['email'];
+            $this->sDireccion = $registro['direccion'];
+            $this->nExperienciaAnios = $registro['experiencia_anios'];
+            $this->nModalidad = $registro['modalidad'];
+            return true;
         } else {
             return false;
         }
