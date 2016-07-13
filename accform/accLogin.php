@@ -1,7 +1,8 @@
 <?php
 include ('../presentacion/librerias.php');
 $claveSHA = sha1($_POST['clave']);
-$usr = new Usuario("", $_POST['run']+$_POST['run2'], "", $claveSHA, "", "", '1990-05-01', '', 0, "", "", 12, 1, 0, 3, 1, 2, '1900-01-01');
+$rut = $_POST['run']+$_POST['run2'];
+$usr = new Usuario("", $rut, "", $claveSHA, "", "", '1990-05-01', '', 0, "", "", 12, 1, 0, 3, 1, 2, '1900-01-01');
 
 session_start();
 
