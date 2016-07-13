@@ -21,7 +21,7 @@ $modalidad = new modalidad();
             <td>Nombre:</td>
             <td><input name="nombre" id="nombre" type="text" required="true"></td>
             <td>Comuna:</td>
-            <td><select name="comunas" id="comuna">
+            <td><select name="comuna" id="comuna">
                     <?php
                     while ($row = $comuna->Selecciona()) {
                         ?><option value="<?=$row->getNId()?>"> <?=$row->getSDescripcion()?></option><?php

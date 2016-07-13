@@ -1,5 +1,5 @@
 <?php
-// JONA LEE ESTO: CUANDO INGRESES AQUI, COLOCA QUE LA CLAVE DEL USUARIO ES 0 SOLAMENTE ESO.
+// LA CLAVE DEL USUARIO POR DEFAULT ES 0 AL INGRESAR LA POSTULACION
 include ('../presentacion/librerias.php');
 $usr = new Usuario();
 $rut = $_POST['run'] . $_POST['run2'];
@@ -22,7 +22,7 @@ $modal = $_POST['modalidad'];
 $curso = $_POST['curso'];
 $email = $_POST['mail'];
 $spass = "0";
-if($usr->CreaCliente($rut, $snombre, $spass, $sapaterno, $samaterno, $fechanac, $sexo, $fono, $email, $direccion, $comuna, $educacion, $exper==1? true : false, $experanios, $modal, $curso)){
+if($usr->CreaCliente($rut, $snombre, $spass, $sapaterno, $samaterno, $fechanac, $sexo, $fono, $email, $direccion, $comuna, $educacion, $exper=="on"?true:false, $experanios, $modal, $curso)){
     ?>
 <script>
     alert('Se ha registrado con éxito!');
