@@ -17,7 +17,8 @@
     </center>
     <div class="submit">
         <center>
-            <input class="submit" type="submit" value="Ingresar"><input type="button" value="Registrar" onclick="location.href = '../presentacion/registroUsuario.php'">
+            <input class="submit" type="submit" value="Ingresar">
+            <input type="button" value="Registrar" onclick="location.href = '../presentacion/registroUsuario.php'">
         </center>
     </div>
 </form>
