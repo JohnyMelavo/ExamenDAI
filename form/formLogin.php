@@ -8,7 +8,7 @@
             <tr>
                 <td>RUN:</td>
                 <td><input class="required" type="text" name="run" id="run" required="true" minlength="7" maxlength="8" style="max-width: 140px"> - <input class="required" style="max-width: 80px" type="text" name="run2" id="run2" required="true" minlength="1" maxlength="1"></td>
-            </tr>              
+            </tr>               
             <tr>
                 <td>Clave:</td>
                 <td><input class="required" type="password" name="clave" id="clave" required="true"></td>

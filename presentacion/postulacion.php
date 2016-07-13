@@ -8,7 +8,9 @@ if (!isset($_SESSION["oUsuario"])) {
         document.location.href = "login.php";
     </script>
     <?php
-} 
+} else {
+    $usr = $_SESSION["oUsuario"];
+}
 ?>
 
 <html>

@@ -1,7 +1,6 @@
 <?php
-include 'librerias.php';
+include ('librerias.php');
 session_start();
-$usr = new Usuario();
 
 if (!isset($_SESSION["oUsuario"])) {
     ?>
@@ -9,9 +8,8 @@ if (!isset($_SESSION["oUsuario"])) {
         document.location.href = "login.php";
     </script>
     <?php
-}else{
+} else {
     $usr = $_SESSION["oUsuario"];
-    echo $usr->getSNombre();
 }
 ?>
 <html lang=''>

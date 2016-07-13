@@ -1,4 +1,7 @@
-<?php
+<div class="divider" style="text-align: right">
+    <?php echo "Cambiar clave a: " . $usr->getSNombre() . " " . $usr->getSAPaterno() . " " . $usr->getSAMaterno(); ?>
+</div>
+    <?php
 $usr = new Usuario();
 $comuna = new Comunas();
 $educacion = new educacion();
@@ -24,7 +27,7 @@ $modalidad = new modalidad();
             <td><select name="comuna" id="comuna">
                     <?php
                     while ($row = $comuna->Selecciona()) {
-                        ?><option value="<?=$row->getNId()?>"> <?=$row->getSDescripcion()?></option><?php
+                        ?><option value="<?= $row->getNId() ?>"> <?= $row->getSDescripcion() ?></option><?php
                     }
                     ?>
                 </select></td>
@@ -36,7 +39,7 @@ $modalidad = new modalidad();
             <td><select name="educacion" id="educacion">
                     <?php
                     while ($row = $educacion->Selecciona()) {
-                        ?><option value="<?=$row->getNId()?>"> <?=$row->getSDescripcion()?></option><?php
+                        ?><option value="<?= $row->getNId() ?>"> <?= $row->getSDescripcion() ?></option><?php
                     }
                     ?>
                 </select></td>
@@ -49,7 +52,7 @@ $modalidad = new modalidad();
         <tr>
             <td>Fecha Nacimiento:</td>
             <td><input type="date" id="fechanacimiento" name="fechanacimiento" required="true"></td>
-            
+
             <td><div id="expaniosDiv" hidden="true">
                     Ingrese Cantidad de años <input type="number" id="expanios" min="1" max="50">
                 </div>
@@ -68,7 +71,7 @@ $modalidad = new modalidad();
             <td><select name="modalidad" id="modalidad">
                     <?php
                     while ($row = $modalidad->Selecciona()) {
-                        ?><option value="<?=$row->getNId()?>"> <?=$row->getSDescripcion()?></option><?php
+                        ?><option value="<?= $row->getNId() ?>"> <?= $row->getSDescripcion() ?></option><?php
                     }
                     ?>
                 </select></td>
@@ -80,7 +83,7 @@ $modalidad = new modalidad();
             <td><select name="curso" id="curso">
                     <?php
                     while ($row = $curso->Selecciona()) {
-                        ?><option value="<?=$row->getNId()?>"> <?=$row->getSDescripcion()?></option><?php
+                        ?><option value="<?= $row->getNId() ?>"> <?= $row->getSDescripcion() ?></option><?php
                     }
                     ?>
                 </select></td>
