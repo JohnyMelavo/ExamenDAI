@@ -11,7 +11,6 @@ if (!isset($_SESSION["oUsuario"])) {
     <?php
 }else{
     $usr = $_SESSION["oUsuario"];
-    echo $usr->getSNombre();
 }
 ?>
 <html lang=''>
