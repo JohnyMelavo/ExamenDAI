@@ -1,9 +1,6 @@
 <?php
 $usr = new Usuario();
 ?>
-<div class="divider" style="text-align: right">
-    <?php echo "Bienvenido/a: " . $usr->getSNombre() . " " . $usr->getSAPaterno() . " " . $usr->getSAMaterno(); ?>
-</div>
 <form class="formoid-solid-green" style="background-color:#aaaaaa;font-size:12px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:560px;min-width:150px" 
       method="POST" action="../accform/accRegistro.php">
     <div class="title">
@@ -19,8 +16,8 @@ $usr = new Usuario();
     <table>
         <tr>
             <td>RUN:</td>
-            <td><input class="required" type="number" name="run" id="run" required="true" minlength="7" maxlength="8" style="max-width: 140px"> - <input class="required" style="max-width: 80px" type="number" name="run2" id="run2" required="true" minlength="1" maxlength="1"></td>
-        </tr>
+            <td><input class="required" type="text" name="run" id="run" required="true" minlength="7" maxlength="8" style="max-width: 140px"> - <input class="required" style="max-width: 80px" type="text" name="run2" id="run2" required="true" minlength="1" maxlength="1"></td>
+        </tr>   
         <tr>
             <td>Nombre:</td>
             <td><input name="nombre" id="nombre" type=text required="true" onclick="Rut(run)"></td>
@@ -46,6 +43,9 @@ $usr = new Usuario();
         </tr>
     </table>
     <div class="submit">
+        <left>
+            <input id="Volver" type="button" value="Volver" onclick="location.href = '../index.php'">
+        </left>
         <input id="registrar" type="submit" onclick="validarPW()" value="Registrar">
     </div>           
 </form>
