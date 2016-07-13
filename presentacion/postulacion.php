@@ -17,11 +17,11 @@ include ('librerias.php');
         <title>Portal de usuario</title>
     </head>
     <body class="blurBg-true" style="background-color:#EBEBEB">
-        <link rel="stylesheet" href="./css/formoid-solid-green.css" type="text/css">
-        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <link rel="stylesheet" href="../css/formoid-solid-green.css" type="text/css">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
 
         <?php
-        require ('./form/formPostulacion.php');
+        require ('../form/formPostulacion.php');
         ?>
     </body>
 </html>

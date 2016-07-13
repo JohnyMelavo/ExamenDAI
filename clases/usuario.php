@@ -230,10 +230,10 @@ class Usuario {
         if ($querysel->rowcount() == 1) {
             $registro = $querysel->fetch();
             $this->sRut = $registro['rut'];
-            $this->sNombre = $registro['nombre'];
-            $this->sPass = $registro['apellido_pat'];
-            $this->sAPaterno = $registro['apellido_mat'];
-            $this->sAMaterno = $registro['password'];
+            //->sNombre = $registro['nombre'];
+            $this->sPass = $registro['password'];
+            //$this->sAPaterno = $registro['apellido_pat'];
+            //$this->sAMaterno = $registro['apellido_mat'];
             return true;
         } else {
             return false;
