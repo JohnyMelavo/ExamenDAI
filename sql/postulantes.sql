@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `experiencia_anios` int(5),
   `modalidad` int(11) NOT NULL,
   `curso` int(11) NOT NULL,
-  `estado` varchar(255) NOT NULL,
+  `estado` int(5) NOT NULL,
   `user_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`),
   FOREIGN KEY (`id_comuna`) REFERENCES comunas(`id`),
