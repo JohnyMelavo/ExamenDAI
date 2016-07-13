@@ -26,6 +26,7 @@ class Usuario {
     private $nCurso;
     private $dFechaCreacion;
     private $sEstado;
+    private $querysel;
 
     function __construct($suId = NULL, $sRut = NULL, $sNombre = NULL, $sPass = NULL, $sAPaterno = NULL, $sAMaterno = NULL, $dFechaNac = NULL, $sSexo = NULL, $sTelefono = NULL, $sEmail = NULL, $sDireccion = NULL, $sIdComuna = NULL, $sEducacion = NULL, $bExperiencia = NULL, $nExperienciaAnios = NULL, $nModalidad = NULL, $nCurso = NULL, $dFechaCreacion = NULL, $sEstado = NULL) {
         $this->suId = $suId;
@@ -222,15 +223,16 @@ class Usuario {
         }
     }
 
-    //READ DEL CRUD!
-    function Selecciona() {
+    //READ DEL CRUD! SOLO POSTULACIONES CERTIFICACIONES
+    function SeleccionaPostulantes() {
 
         if (!$this->querysel) {
             $db = dbconnect();
             /* Definicion del query que permitira seleccionar los registros */
 
-            $sqlsel = "select id,descripcion from comunas order by descripcion";
+            $sqlsel = "select us.rut,us.nombre,es.descripcion from usuarios us join estadosolicitud es on (us.estado = es.id) where user_id > 12";
 
+            
             /* Preparacion SQL */
             $this->querysel = $db->prepare($sqlsel);
 
@@ -239,7 +241,7 @@ class Usuario {
 
         $registro = $this->querysel->fetch();
         if ($registro) {
-            return new self($registro['id'], $registro['descripcion']);
+            return new self($registro['rut'], $registro['nombre'], $registro['descripcion']);
         } else {
             return false;
         }
@@ -327,7 +329,8 @@ class Usuario {
 
         return $valaux;
     }
-
+    
+    // FALTA ACTUALIZAR
     //UPDATE DEL CRUD!
     function ActualizaCliente($srun, $snom, $sapat, $samat, $snewpwd) {
         $db = dbconnect();
