@@ -66,7 +66,7 @@ INSERT INTO `comunas` (`id`, `descripcion`) VALUES
 (24, 'Lo Prado'),
 (25, 'Macul'),
 (26, 'Maipu'),
-(27, 'Maríi Pinto'),
+(27, 'Maria Pinto'),
 (28, 'Melipilla'),
 (29, 'Nunoa'),
 (30, 'Tiltil'),
