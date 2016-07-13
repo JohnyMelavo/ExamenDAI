@@ -112,11 +112,11 @@ CREATE TABLE IF NOT EXISTS `educacion` (
 --
 
 INSERT INTO `educacion` (`id`, `descripcion`) VALUES
+(0, 'No Posee'),
 (1, 'Profesional'),
 (2, 'Tecnico'),
 (3, 'Media'),
-(4, 'Basica'),
-(5, 'No Posee');
+(4, 'Basica');
 
 -- --------------------------------------------------------
 
