@@ -177,9 +177,9 @@ CREATE TABLE IF NOT EXISTS `estadoSolicitud` (
 --
 
 INSERT INTO `estadoSolicitud` (`id`, `descripcion`) VALUES
-(1, 'Estado Pendiente'),
-(2, 'Estado Aprobado'),
-(3, 'Estado Rechazado');
+(1, 'Pendiente'),
+(2, 'Aprobado'),
+(3, 'Rechazado');
 
 -- --------------------------------------------------------
 
