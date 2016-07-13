@@ -25,8 +25,9 @@ class Usuario {
     private $nModalidad;
     private $nCurso;
     private $dFechaCreacion;
+    private $sEstado;
 
-    function __construct($suId = NULL, $sRut = NULL, $sNombre = NULL, $sPass = NULL, $sAPaterno = NULL, $sAMaterno = NULL, $dFechaNac = NULL, $sSexo = NULL, $sTelefono = NULL, $sEmail = NULL, $sDireccion = NULL, $sIdComuna = NULL, $sEducacion = NULL, $bExperiencia = NULL, $nExperienciaAnios = NULL, $nModalidad = NULL, $nCurso = NULL, $dFechaCreacion = NULL) {
+    function __construct($suId = NULL, $sRut = NULL, $sNombre = NULL, $sPass = NULL, $sAPaterno = NULL, $sAMaterno = NULL, $dFechaNac = NULL, $sSexo = NULL, $sTelefono = NULL, $sEmail = NULL, $sDireccion = NULL, $sIdComuna = NULL, $sEducacion = NULL, $bExperiencia = NULL, $nExperienciaAnios = NULL, $nModalidad = NULL, $nCurso = NULL, $dFechaCreacion = NULL, $sEstado = NULL) {
         $this->suId = $suId;
         $this->sRut = $sRut;
         $this->sNombre = $sNombre;
@@ -45,9 +46,18 @@ class Usuario {
         $this->nModalidad = $nModalidad;
         $this->nCurso = $nCurso;
         $this->dFechaCreacion = $dFechaCreacion;
+        $this->sEstado = $sEstado;
     }
 
-    function getSuId() {
+    function getSEstado() {
+        return $this->sEstado;
+    }
+
+    function setSEstado($sEstado) {
+        $this->sEstado = $sEstado;
+    }
+
+        function getSuId() {
         return $this->suId;
     }
 
@@ -249,7 +259,7 @@ class Usuario {
     function CreaCliente($sRut, $sNombre, $sPass, $sAPaterno, $sAMaterno, $dFechaNac, $sSexo, $nTelefono, $sEmail, $sDireccion, $nIdComuna, $nEducacion, $bExperiencia, $nExperienciaAnios, $nModalidad, $nCurso) {
         $db = dbconnect();
         /* Definición del query que permitira ingresar un nuevo registro */
-        $sqlsel = "INSERT INTO usuarios (rut,nombre,password,apellido_pat,apellido_mat,fecha_nacimiento,sexo,telefono,email,direccion,id_comuna,educacion,experiencia,experiencia_anios,modalidad,curso) VALUES (:run,:nombre,:pass,:apaterno,:amaterno,:fechanac,:sexo,:telefono,:email,:direccion,:idcomuna,:educacion,:exper,:experanios,:modalidad,:curso)";
+        $sqlsel = "INSERT INTO usuarios (rut,nombre,password,apellido_pat,apellido_mat,fecha_nacimiento,sexo,telefono,email,direccion,id_comuna,educacion,experiencia,experiencia_anios,modalidad,curso,estado) VALUES (:run,:nombre,:pass,:apaterno,:amaterno,:fechanac,:sexo,:telefono,:email,:direccion,:idcomuna,:educacion,:exper,:experanios,:modalidad,:curso,1)";
         /* Preparación SQL */
         $querysel = $db->prepare($sqlsel);
         /* Asignación de parametros utilizando bindparam */
