@@ -232,7 +232,7 @@ class Usuario {
 
             $sqlsel = "select us.rut,us.nombre,es.descripcion from usuarios us join estadosolicitud es on (us.estado = es.id) where user_id > 12";
 
-            
+
             /* Preparacion SQL */
             $this->querysel = $db->prepare($sqlsel);
 
@@ -246,12 +246,37 @@ class Usuario {
             return false;
         }
     }
-    
+
+    // READ DEL CRUD!
+    function LeerDatos($rot) {
+        if (!$this->querysel) {
+            $db = dbconnect();
+            /* Definicion del query que permitira seleccionar los registros */
+
+
+            $sqlsel = "select nombre,apellido_pat,apellido_mat,fecha_nacimiento,sexo,telefono,email,direccion from usuarios
+		where rut=:run";
+            /* Preparacion SQL */
+            $this->querysel = $db->prepare($sqlsel);
+            /* Asignación de parametros utilizando bindparam */
+            $querysel->bindParam(':run', $rot);
+
+            $this->querysel->execute();
+        }
+
+        $registro = $this->querysel->fetch();
+        if ($registro) {
+            return new self($registro['rut'], $registro['nombre'], $registro['descripcion']);
+        } else {
+            return false;
+        }
+    }
+
     function VerificaAcceso() {
         $db = dbconnect();
         /* Definición del query que permitira ingresar un nuevo registro */
         $sqlsel = "select rut,nombre,password,apellido_pat,apellido_mat,fecha_nacimiento,sexo,telefono,email,direccion from usuarios
-		where rut=:run and password=:pwd";
+		where rut=:run";
         /* Preparación SQL */
         $querysel = $db->prepare($sqlsel);
         /* Asignación de parametros utilizando bindparam */
@@ -329,7 +354,7 @@ class Usuario {
 
         return $valaux;
     }
-    
+
     // FALTA ACTUALIZAR
     //UPDATE DEL CRUD!
     function ActualizaCliente($srun, $snom, $sapat, $samat, $snewpwd) {
