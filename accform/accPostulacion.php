@@ -11,7 +11,7 @@ $educacion = $_POST['educacion'];
 $samaterno = $_POST['apmaterno'];
 $fechanac = $_POST['fechanacimiento'];
 $exper = $_POST['experiencia'];
-if($exper === 1){
+if($exper == "on"){
     $experanios = $_POST['expanios'];
 } else {
     $experanios = 0;

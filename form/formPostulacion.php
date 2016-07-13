@@ -13,7 +13,7 @@ $modalidad = new modalidad();
     <table>
         <tr>
             <td>RUN:</td>
-            <td><input class="required" type="text" name="run" id="run" required="true" minlength="8" maxlength="8" style="max-width: 80px"> - <input class="required" style="max-width: 20px" type="text" name="run2" id="run2" required="true" minlength="1" maxlength="1"></td>
+            <td><input class="required" type="text" name="run" id="run" required="true" minlength="7" maxlength="8" style="max-width: 80px"> - <input class="required" style="max-width: 20px" type="text" name="run2" id="run2" required="true" minlength="1" maxlength="1"></td>
             <td>Dirección:</td>
             <td><input class="required" type="text" name="direccion" id="direccion" required="true"</td>
         </tr>
