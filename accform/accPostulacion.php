@@ -10,8 +10,11 @@ $sapaterno = $_POST['appaterno'];
 $educacion = $_POST['educacion'];
 $samaterno = $_POST['apmaterno'];
 $fechanac = $_POST['fechanacimiento'];
-$exper = $_POST['experiencia'];
-if($exper == "on"){
+try{
+    $exper = $_POST['experiencia'];
+} catch (Exception $e){
+}
+if ($exper === "on") {
     $experanios = $_POST['expanios'];
 } else {
     $experanios = 0;
@@ -22,18 +25,18 @@ $modal = $_POST['modalidad'];
 $curso = $_POST['curso'];
 $email = $_POST['mail'];
 $spass = "0";
-if($usr->CreaCliente($rut, $snombre, $spass, $sapaterno, $samaterno, $fechanac, $sexo, $fono, $email, $direccion, $comuna, $educacion, $exper=="on"?true:false, $experanios, $modal, $curso)){
+if ($usr->CreaCliente($rut, $snombre, $spass, $sapaterno, $samaterno, $fechanac, $sexo, $fono, $email, $direccion, $comuna, $educacion, $exper == "on" ? true : false, $experanios, $modal, $curso)) {
     ?>
-<script>
-    alert('Se ha registrado con éxito!');
-    document.location.href = "<?= PATHURL ?>index.php";
-</script>
-<?php } else{
+    <script>
+        alert('Se ha registrado con éxito!');
+        document.location.href = "<?= PATHURL ?>index.php";
+    </script>
+<?php } else {
     ?> 
-<script>
-    alert('Servidor ocupado, intente nuevamente mas tarde!');
-    document.location.href = "<?= PATHURL ?>index.php";
-</script>
-        <?php
+    <script>
+        alert('Servidor ocupado, intente nuevamente mas tarde!');
+        document.location.href = "<?= PATHURL ?>index.php";
+    </script>
+    <?php
 }
 ?>

@@ -223,6 +223,28 @@ class Usuario {
     }
 
     //READ DEL CRUD!
+    function Selecciona() {
+
+        if (!$this->querysel) {
+            $db = dbconnect();
+            /* Definicion del query que permitira seleccionar los registros */
+
+            $sqlsel = "select id,descripcion from comunas order by descripcion";
+
+            /* Preparacion SQL */
+            $this->querysel = $db->prepare($sqlsel);
+
+            $this->querysel->execute();
+        }
+
+        $registro = $this->querysel->fetch();
+        if ($registro) {
+            return new self($registro['id'], $registro['descripcion']);
+        } else {
+            return false;
+        }
+    }
+    
     function VerificaAcceso() {
         $db = dbconnect();
         /* Definición del query que permitira ingresar un nuevo registro */
