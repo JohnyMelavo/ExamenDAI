@@ -6,7 +6,7 @@ $snombre = $_POST['nombre'];
 $sapaterno = $_POST['apaterno'];
 $samaterno = $_POST['amaterno'];
 $spass = md5($_POST['contraseña']);
-$usr->CreaCliente($srun, $snombre, $sapaterno, $samaterno, $spass=="on"?true:false);
+$usr->CreaCliente($srun, $snombre, $sapaterno, $samaterno, $spass == "on" ? true : false);
 
 //include '../registromail.php';
 ?>

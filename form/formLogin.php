@@ -3,17 +3,21 @@
     <div class="title">
         <h2>Portal de acceso</h2>
     </div>
-    <table>
-        <tr>
-            <td>RUN:</td>
-            <td><input class="required" type="text" name="run" id="run" required="true" minlength="7" maxlength="8" style="max-width: 140px"> - <input class="required" style="max-width: 80px" type="text" name="run2" id="run2" required="true" minlength="1" maxlength="1"></td>
-        </tr>              
-        <tr>
-            <td>Clave:</td>
-            <td><input class="required" type="password" name="clave" id="clave" required="true"></td>
-        </tr>
-    </table>
-    <center>
-        <input class="submit" type="submit" value="Ingresar"><input type="button" value="Registrar" onclick="location.href = '../presentacion/registroUsuario.php'">
+    <center> 
+        <table>
+            <tr>
+                <td>RUN:</td>
+                <td><input class="required" type="text" name="run" id="run" required="true" minlength="7" maxlength="8" style="max-width: 140px"> - <input class="required" style="max-width: 80px" type="text" name="run2" id="run2" required="true" minlength="1" maxlength="1"></td>
+            </tr>              
+            <tr>
+                <td>Clave:</td>
+                <td><input class="required" type="password" name="clave" id="clave" required="true"></td>
+            </tr>
+        </table>
     </center>
+    <div class="submit">
+        <center>
+            <input class="submit" type="submit" value="Ingresar"><input type="button" value="Registrar" onclick="location.href = '../presentacion/registroUsuario.php'">
+        </center>
+    </div>
 </form>

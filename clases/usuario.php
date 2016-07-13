@@ -248,7 +248,7 @@ class Usuario {
         /* Preparación SQL */
         $querysel = $db->prepare($sqlsel);
         /* Asignación de parametros utilizando bindparam */
-        
+
         $querysel->bindParam(':run', $sRut);
         $querysel->bindParam(':nombre', $sNombre);
         $querysel->bindParam(':pass', $sPass);
