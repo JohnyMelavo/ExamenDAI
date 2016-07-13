@@ -57,7 +57,7 @@ class Usuario {
         $this->sEstado = $sEstado;
     }
 
-        function getSuId() {
+    function getSuId() {
         return $this->suId;
     }
 
@@ -256,7 +256,7 @@ class Usuario {
     }
 
     //CREATE DEL CRUD!
-    function CreaCliente($sRut, $sNombre, $sPass, $sAPaterno, $sAMaterno, $dFechaNac, $sSexo, $nTelefono, $sEmail, $sDireccion, $nIdComuna, $nEducacion, $bExperiencia, $nExperienciaAnios, $nModalidad, $nCurso) {
+    function CreaCliente($sRut, $sNombre, $sAPaterno, $sAMaterno, $sPass, $dFechaNac = NULL, $sSexo = NULL, $nTelefono = NULL, $sEmail = NULL, $sDireccion = NULL, $nIdComuna = NULL, $nEducacion = NULL, $bExperiencia = NULL, $nExperienciaAnios = NULL, $nModalidad = NULL, $nCurso = NULL) {
         $db = dbconnect();
         /* Definición del query que permitira ingresar un nuevo registro */
         $sqlsel = "INSERT INTO usuarios (rut,nombre,password,apellido_pat,apellido_mat,fecha_nacimiento,sexo,telefono,email,direccion,id_comuna,educacion,experiencia,experiencia_anios,modalidad,curso,estado) VALUES (:run,:nombre,:pass,:apaterno,:amaterno,:fechanac,:sexo,:telefono,:email,:direccion,:idcomuna,:educacion,:exper,:experanios,:modalidad,:curso,1)";
@@ -266,9 +266,9 @@ class Usuario {
 
         $querysel->bindParam(':run', $sRut);
         $querysel->bindParam(':nombre', $sNombre);
-        $querysel->bindParam(':pass', $sPass);
         $querysel->bindParam(':apaterno', $sAPaterno);
         $querysel->bindParam(':amaterno', $sAMaterno);
+        $querysel->bindParam(':pass', $sPass);
         $querysel->bindParam(':fechanac', $dFechaNac);
         $querysel->bindParam(':sexo', $sSexo);
         $querysel->bindParam(':telefono', $nTelefono);
