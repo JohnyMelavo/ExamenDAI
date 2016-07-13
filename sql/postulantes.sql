@@ -161,6 +161,29 @@ INSERT INTO `curso` (`id`, `descripcion`) VALUES
 -- --------------------------------------------------------
 
 
+
+--
+-- Estructura de tabla para la tabla `estadoSolicitud`
+--
+
+CREATE TABLE IF NOT EXISTS `estadoSolicitud` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descripcion` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Volcado de datos para la tabla `estadoSolicitud`
+--
+
+INSERT INTO `estadoSolicitud` (`id`, `descripcion`) VALUES
+(1, 'Estado Pendiente'),
+(2, 'Estado Aprobado'),
+(3, 'Estado Rechazado');
+
+-- --------------------------------------------------------
+
+
 --
 -- Estructura de tabla para la tabla `usuarios`
 --
@@ -183,12 +206,14 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `experiencia_anios` int(5),
   `modalidad` int(11) NOT NULL,
   `curso` int(11) NOT NULL,
+  `estado` varchar(255) NOT NULL,
   `user_created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`),
   FOREIGN KEY (`id_comuna`) REFERENCES comunas(`id`),
   FOREIGN KEY (`educacion`) REFERENCES educacion(`id`),
   FOREIGN KEY (`modalidad`) REFERENCES modalidad(`id`),
-  FOREIGN KEY (`curso`) REFERENCES curso(`id`)
+  FOREIGN KEY (`curso`) REFERENCES curso(`id`),
+  FOREIGN KEY (`estado`) REFERENCES estadoSolicitud(`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
