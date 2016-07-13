@@ -220,10 +220,10 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`user_id`, `rut`, `nombre`, `password`, `apellido_pat`, `apellido_mat`, `fecha_nacimiento`, `sexo`, `telefono`, `email`, `direccion`, `id_comuna`, `educacion`, `experiencia`, `experiencia_anios`, `modalidad`, `curso`, `user_created_at`) VALUES
-(5, '123456789', 'Admin', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'admin', 'Administrador', '2016-06-09', 'X', 123456789, 'admin@admin.admin', 'calle falsa 123', 15, 1, true, 15, 1, 1, '2016-06-09 00:24:49'),
-(6, '177008796', 'Joseph', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Perez', 'Carmona', '1991-03-26', 'M', 50010078, 'jose.perez@peluka.info', 'antonio varas 666', 20, 2, true, 2, 2, 2, '2016-06-30 16:59:35'),
-(7, '186948483', 'Jonathan', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Espinoza', 'Brain', '1994-01-01', 'M', 23004500, 'jonathanespinozab@gmail.com', 'antonio varas 666', 35, 3, false, 0, 2, 3, '2016-06-30 16:59:35');
+INSERT INTO `usuarios` (`user_id`, `rut`, `nombre`, `password`, `apellido_pat`, `apellido_mat`, `fecha_nacimiento`, `sexo`, `telefono`, `email`, `direccion`, `id_comuna`, `educacion`, `experiencia`, `experiencia_anios`, `modalidad`, `curso`, `estado`, `user_created_at`) VALUES
+(5, '123456789', 'Admin', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'admin', 'Administrador', '2016-06-09', 'X', 123456789, 'admin@admin.admin', 'calle falsa 123', 15, 1, true, 15, 1, 1, 2, '2016-06-09 00:24:49'),
+(6, '177008796', 'Joseph', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Perez', 'Carmona', '1991-03-26', 'M', 50010078, 'jose.perez@peluka.info', 'antonio varas 666', 20, 2, true, 2, 2, 2, 2, '2016-06-30 16:59:35'),
+(7, '186948483', 'Jonathan', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Espinoza', 'Brain', '1994-01-01', 'M', 23004500, 'jonathanespinozab@gmail.com', 'antonio varas 666', 35, 3, false, 0, 2, 3, 2, '2016-06-30 16:59:35');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
