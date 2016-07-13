@@ -28,7 +28,8 @@
         var clave;
         var claveactual = "<?= $usr->getSPass(); ?>";
         var dato = $("#claveactual").val();
-        clave = CryptoJS.MD5(dato).toString();
+        clave = CryptoJS.SHA1(dato).toString();
+        //clave = CryptoJS.MD5(dato).toString();
         if (claveactual !== clave) {
             alert("Clave actual no corresponde");
             return;
@@ -41,7 +42,7 @@
         $.ajax({
             url: 'accform/accUsuarioUPDClave.php',
             type: 'POST',
-            data: "newpwd=" + CryptoJS.MD5($("#clavenueva").val()).toString(),
+            data: "newpwd=" + CryptoJS.sha1($("#clavenueva").val()).toString(),
             success: function (datos) {
                 alert("clave cambiada");
             }

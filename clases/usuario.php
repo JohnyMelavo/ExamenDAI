@@ -216,7 +216,7 @@ class Usuario {
     function VerificaAcceso() {
         $db = dbconnect();
         /* Definición del query que permitira ingresar un nuevo registro */
-        $sqlsel = "select rut,nombre,password,apellido_pat,apellido_mat from usuarios
+        $sqlsel = "select rut,nombre,password,apellido_pat,apellido_mat,fecha_nacimiento,sexo,telefono,email,direccion from usuarios
 		where rut=:run and password=:pwd";
         /* Preparación SQL */
         $querysel = $db->prepare($sqlsel);
@@ -230,10 +230,15 @@ class Usuario {
         if ($querysel->rowcount() == 1) {
             $registro = $querysel->fetch();
             $this->sRut = $registro['rut'];
-            //->sNombre = $registro['nombre'];
+            $this->sNombre = $registro['nombre'];
             $this->sPass = $registro['password'];
-            //$this->sAPaterno = $registro['apellido_pat'];
-            //$this->sAMaterno = $registro['apellido_mat'];
+            $this->sAPaterno = $registro['apellido_pat'];
+            $this->sAMaterno = $registro['apellido_mat'];
+            $this->dFechaNac = $registro['fecha_nacimiento'];
+            $this->sSexo = $registro['sexo'];
+            $this->sTelefono = $registro['telefono'];
+            $this->sEmail = $registro['email'];
+            $this->sDireccion = $registro['direccion'];
             return true;
         } else {
             return false;
@@ -275,16 +280,16 @@ class Usuario {
     function ActualizaClave($snewpwd) {
         $db = dbconnect();
         /* Definición del query que permitira actualizar la clave */
-        $sqlupd = "update usuario
-					set pass=:pwd
-					where run=:id";
+        $sqlupd = "update usuarios
+					set password=:pwd
+					where rut=:id";
 
         /* Preparación SQL */
         $querysel = $db->prepare($sqlupd);
 
         /* Asignación de parametros utilizando bindparam */
-        $querysel->bindParam(':pwd', md5($snewpwd));
-        $querysel->bindParam(':id', $this->sRun);
+        $querysel->bindParam(':pwd', $snewpwd);
+        $querysel->bindParam(':id', $this->sRut);
 
         $valaux = $querysel->execute();
 
