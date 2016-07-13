@@ -1,5 +1,7 @@
 <?php
 $usr = new Usuario();
+$comuna = new Comunas();
+
 ?>
 <form class="formoid-solid-green" style="background-color:#aaaaaa;font-size:10px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:840px;min-width:150px" 
       method="POST" action="../accform/accPostulacion.php">
@@ -31,23 +33,42 @@ $usr = new Usuario();
         </tr>
         <tr>
             <td>Nombre:</td>
-            <td><input name="nombre" id="nombre" type=text required="true"></td>
+            <td><input name="nombre" id="nombre" type="text" required="true"></td>
+            <td>Comuna:</td>
+            <td><select name="comunas">
+            <?php
+        while ($row = $comuna->Selecciona()) {
+             '<option value="'.$row->getNId().'">'.$row->getSDescripcion().'</option>';
+        }
+            ?>
+            </select></td>
         </tr>
         <tr>                     
             <td>Apellido Paterno:</td>
-            <td><input name="apellidos" id="apellidos" type="text" required="true" ></td>
+            <td><input name="appaterno" id="appaterno" type="text" required="true" ></td>
+            <td>Educacion:</td>
+            <td><input name="educacion" id="educacion" type="text" required="true"></td>
         </tr>
         <tr>
             <td>Apellido Materno:</td>
-            <td><input name="apellidos" id="apellidos" type="text" required="true" ></td>
+            <td><input name="apmaterno" id="apmaterno" type="text" required="true" ></td>
         </tr>
         <tr>
-            <td>Contraseña:</td>
-            <td><input type="password" id="contraseña" name="contraseña" required="true"></td>
+            <td>Fecha Nacimiento:</td>
+            <td><input type="date" id="fechanacimiento" name="fechanacimiento" required="true"></td>
         </tr>
         <tr>
-            <td>Repita Contraseña:</td>
-            <td><input type="password" id="contraseña" name="contraseña" required="true"></td>
+            <td>Sexo:</td>
+            <td><input type="radio" id="sexo" name="sexo" value="M" required="true" checked>M 
+            <input type="radio" id="sexo" name="sexo" value="F" required="true">F</td>
+        </tr>
+        <tr>
+            <td>Telefono:</td>
+            <td><input type="number" id="telefono" name="telefono" required="true" ></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" id="mail" name="mail" required="true" placeholder="Ej: tucorreo@dominio.com"></td>
         </tr>
     </table>
     <div class="submit">
