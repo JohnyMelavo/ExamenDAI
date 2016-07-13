@@ -26,7 +26,7 @@ class Usuario {
     private $nCurso;
     private $dFechaCreacion;
 
-    function __construct($suId = NULL, $sRut = NULL, $sNombre = NULL, $sPass = NULL, $sAPaterno = NULL, $sAMaterno = NULL, $sAPaterno = NULL, $dFechaNac = NULL, $sSexo = NULL, $sTelefono = NULL, $sEmail = NULL, $sDireccion = NULL, $sIdComuna = NULL, $sEducacion = NULL, $bExperiencia = NULL, $nExperienciaAnios = NULL, $nModalidad = NULL, $nCurso = NULL, $dFechaCreacion = NULL) {
+    function __construct($suId = NULL, $sRut = NULL, $sNombre = NULL, $sPass = NULL, $sAPaterno = NULL, $sAMaterno = NULL, $dFechaNac = NULL, $sSexo = NULL, $sTelefono = NULL, $sEmail = NULL, $sDireccion = NULL, $sIdComuna = NULL, $sEducacion = NULL, $bExperiencia = NULL, $nExperienciaAnios = NULL, $nModalidad = NULL, $nCurso = NULL, $dFechaCreacion = NULL) {
         $this->suId = $suId;
         $this->sRut = $sRut;
         $this->sNombre = $sNombre;
