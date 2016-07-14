@@ -286,7 +286,7 @@ class Usuario {
         $db = dbconnect();
         /* Definición del query que permitira ingresar un nuevo registro */
         $sqlsel = "select rut,nombre,password,apellido_pat,apellido_mat,fecha_nacimiento,sexo,telefono,email,direccion from usuarios
-		where rut=:run";
+		where rut=:run and password=:pwd";
         /* Preparación SQL */
         $querysel = $db->prepare($sqlsel);
         /* Asignación de parametros utilizando bindparam */
