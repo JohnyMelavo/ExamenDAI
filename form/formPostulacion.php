@@ -1,13 +1,13 @@
-<?php
+<div class="divider" style="text-align: right">
+    <?php echo "Cambiar clave a: " . $usr->getSNombre() . " " . $usr->getSAPaterno() . " " . $usr->getSAMaterno(); ?>
+</div>
+    <?php
 $usr = new Usuario();
 $comuna = new Comunas();
 $educacion = new educacion();
 $curso = new curso;
 $modalidad = new modalidad();
 ?>
-<div class="divider" style="text-align: right">
-    <?php echo "Bienvenido/a: " . $usr->getSNombre() . " " . $usr->getSAPaterno() . " " . $usr->getSAMaterno(); ?>
-</div>
 <form class="formoid-solid-green" style="background-color:#aaaaaa;font-size:10px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:840px;min-width:150px" 
       method="POST" action="../accform/accPostulacion.php">
     <div class="title">
