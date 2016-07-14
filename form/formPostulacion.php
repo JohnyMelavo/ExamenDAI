@@ -1,5 +1,5 @@
 <div class="divider" style="text-align: right">
-    <?php echo "Cambiar clave a: " . $usr->getSNombre() . " " . $usr->getSAPaterno() . " " . $usr->getSAMaterno(); ?>
+    <?php echo "Bienvenido/a: " . $usr->getSNombre() . " " . $usr->getSAPaterno() . " " . $usr->getSAMaterno(); ?>
 </div>
     <?php
 $usr = new Usuario();
